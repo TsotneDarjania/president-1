@@ -22,7 +22,7 @@ export default class Player extends Phaser.GameObjects.Container{
         this.scene.add.existing(this)
 
         this.init();
-
+        
         this.createBodyParts();
         this.createAnimations();
         this.addController();
@@ -45,6 +45,10 @@ export default class Player extends Phaser.GameObjects.Container{
         cursor.right.on(Phaser.Input.Keyboard.Events.DOWN,this.toRight,this)
         cursor.left.on(Phaser.Input.Keyboard.Events.UP,this.up,this)
         cursor.right.on(Phaser.Input.Keyboard.Events.UP,this.up,this)
+
+        cursor.up.on(Phaser.Input.Keyboard.Events.DOWN, () => {
+            this.body.velocity.y = -600;
+        })
     }
 
     toLeft(){
@@ -86,7 +90,6 @@ export default class Player extends Phaser.GameObjects.Container{
         this.keyUp = true;
         this.animationController.changeAnimationMode("idle");
         this.scene.tweens.killTweensOf(this);
-        this.body.velocity.x = 0;
     }
 
     createAnimations(){

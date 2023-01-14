@@ -1,9 +1,6 @@
 import { Tweens } from "phaser";
 import { animationParams, playrAnimationData } from "../data/playerAnimationDatas";
 
-    
-
-
 export default class AnimationsController {
 
     animationMode : string;

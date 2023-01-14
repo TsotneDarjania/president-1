@@ -32,7 +32,6 @@ export interface animationParams {
     yoyo : boolean
 }
 
-
 export const AnimationData : playrAnimationData = {
     animations : { 
         idle : { 
